@@ -21,6 +21,9 @@
     'data': [
         'views/mrp_production_view.xml',
     ],
+    'images': [
+        'static/description/banner.jpg',
+    ],
     'auto_install': False,
     'installable': True,
     'application': False
