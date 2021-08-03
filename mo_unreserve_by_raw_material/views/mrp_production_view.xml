@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-    <record model="ir.ui.view" id="inherit_mrp_production_form_view">
-        <field name="name">inherit.mrp.production.form</field>
-        <field name="model">mrp.production</field>
-        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+    <record model="ir.ui.view" id="view_stock_move_raw_tree_inherit">
+        <field name="name">stock.move.raw.tree.inherit</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="mrp.view_stock_move_raw_tree"/>
+        <field name="priority">1001</field>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='move_raw_ids']/tree" position="attributes">
+            <xpath expr="/tree" position="attributes">
                 <attribute name="class">unreserve_tree_view</attribute>
             </xpath>
-            <xpath expr="//field[@name='move_raw_ids']/tree/field[@name='quantity_done']" position="after">
+            <xpath expr="//tree/field[@name='quantity_done']" position="after">
                 <button name="action_unreserved_material"
-                    string="UnReserve" 
-                    type="object"
-                    icon="fa-undo fa-lg"
-                    attrs="{'column_invisible': [('parent.unreserve_visible', '=', False)]}"
-                    style="padding-left: 16px;"/>
+
+                        type="object"
+                        string="   Unreserve"
+                        attrs="{'column_invisible': [('parent.unreserve_visible', '=', False)]}"
+                        class="fa fa-repeat float-right pt-0 font-weight-bolder"
+
+                />
             </xpath>
-            
         </field>
     </record>
-
-    
+<!--style="pointer-events: none;" class="oe_inline badge badge-secondary"-->
 
 </odoo>
