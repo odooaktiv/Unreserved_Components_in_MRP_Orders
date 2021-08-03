@@ -1,4 +1,4 @@
-Open ERP System :- Odoo 12C Version 
+Open ERP System :- Odoo 14C Version 
 
 Installation 
 ============
